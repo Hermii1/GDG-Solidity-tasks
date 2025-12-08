@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.5.0;
+pragma solidity ^0.8.0;
 
 /*
 ------------------------------------------------------------
@@ -45,6 +45,7 @@ contract Task2 {
     */
     function setNumber(uint newNumber) public {
         // ✏️ YOUR CODE HERE
+        number=newNumber;
     }
 
 
@@ -55,8 +56,9 @@ contract Task2 {
     - this function should be a VIEW function
     Hint: look at Week 2 notes → view functions read from blockchain
     */
-    function getMessage() public /* add something here */ returns (string memory) {
+    function getMessage() public /* add something here */ view  returns (string memory) {
         // ✏️ YOUR CODE HERE
+        return message;
     }
 
 
@@ -68,8 +70,9 @@ contract Task2 {
     - must be a PURE function (does NOT read or write blockchain state)
     Example: add(3,5) → 8
     */
-    function add(uint a, uint b) public /* make this pure */ returns (uint) {
+    function add(uint a, uint b) public /* make this pure */ pure  returns (uint) {
         // ✏️ YOUR CODE HERE
+        return a + b;
     }
 
 
@@ -83,6 +86,7 @@ contract Task2 {
     */
     function toggleActive() public {
         // ✏️ YOUR CODE HERE
+        isActive = !isActive;
     }
 
 
@@ -94,8 +98,9 @@ contract Task2 {
     - returns false otherwise
     - must be a VIEW function
     */
-    function isNumberBig() public /* make this view */ returns (bool) {
+    function isNumberBig() public /* make this view */ view  returns (bool) {
         // ✏️ YOUR CODE HERE
+         return number > 10;
     }
 
 }
